@@ -158,4 +158,5 @@ function ForgotPassword({ onBackToLogin, onSwitchToRegister }) {
   );
 }
 
+
 export default ForgotPassword;
