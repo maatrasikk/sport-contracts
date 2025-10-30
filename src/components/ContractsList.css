@@ -1,0 +1,395 @@
+/* ContractsList.css */
+.contracts-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contract-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.contract-card.pending {
+  cursor: default;
+}
+
+.contract-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.contract-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contract-card.pending:hover {
+  transform: none;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.contract-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.contract-content {
+  cursor: pointer;
+  flex: 1;
+}
+
+.contract-card.pending .contract-content {
+  cursor: default;
+}
+
+.contract-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.contract-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 140px;
+  cursor: default;
+}
+
+.contract-description {
+  color: #718096;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.contract-details {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #4a5568;
+  min-width: 80px;
+}
+
+.detail-value {
+  color: #2d3748;
+  flex: 1;
+}
+
+.participants {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.participant-arrow {
+  color: #a0aec0;
+  font-weight: bold;
+}
+
+.training-days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.day-tag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(72, 187, 120, 0.1);
+  color: #38a169;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.flexible-tag {
+  background: rgba(237, 137, 54, 0.1);
+  color: #ed8936;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-pending {
+  background: rgba(246, 173, 85, 0.1);
+  color: #ed8936;
+}
+
+.status-accepted {
+  background: rgba(72, 187, 120, 0.1);
+  color: #38a169;
+}
+
+.status-declined {
+  background: rgba(245, 101, 101, 0.1);
+  color: #e53e3e;
+}
+
+/* Delete banner */
+.delete-banner {
+  background: linear-gradient(135deg, #fed7d7, #feebc8);
+  border: 1px solid #fbd38d;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.delete-message {
+  color: #744210;
+  margin: 0 0 0.75rem 0;
+  font-weight: 500;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Action buttons */
+.action-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.action-btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.action-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.action-btn-success {
+  background: #38a169;
+  color: white;
+}
+
+.action-btn-success:hover {
+  background: #2f855a;
+  transform: translateY(-1px);
+}
+
+.action-btn-danger {
+  background: #e53e3e;
+  color: white;
+}
+
+.action-btn-danger:hover {
+  background: #c53030;
+  transform: translateY(-1px);
+}
+
+.action-btn-secondary {
+  background: #718096;
+  color: white;
+}
+
+.action-btn-secondary:hover {
+  background: #4a5568;
+  transform: translateY(-1px);
+}
+
+.action-btn-outline {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.action-btn-outline:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Стили для кнопки в empty state */
+.empty-state .action-btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.empty-state .action-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contract-header {
+    flex-direction: column;
+  }
+  
+  .contract-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    min-width: auto;
+    flex-wrap: wrap;
+  }
+  
+  .delete-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .action-btn {
+    flex: 1;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .detail-label {
+    min-width: auto;
+  }
+  
+  .participants {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .participant-arrow {
+    transform: rotate(90deg);
+  }
+  
+  .empty-state {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contracts-list {
+    gap: 1rem;
+  }
+  
+  .contract-card {
+    padding: 1.25rem;
+  }
+  
+  .contract-title {
+    font-size: 1.1rem;
+  }
+  
+  .action-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+  }
+  
+  .empty-state h3 {
+    font-size: 1.3rem;
+  }
+  
+  .empty-state p {
+    font-size: 1rem;
+  }
+}

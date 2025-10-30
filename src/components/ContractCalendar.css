@@ -1,0 +1,466 @@
+/* ContractCalendar.css */
+.calendar-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #2d3748;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.calendar-back-btn {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-back-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Информация о договоре */
+.contract-info {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contract-info h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.participant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.participant-emoji {
+  font-size: 1.2rem;
+}
+
+.participant-name {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.participant-email {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* Статистика */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.stat-label {
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.stat-you .stat-value { color: #38a169; } /* ЗЕЛЕНЫЙ для ваших тренировок */
+.stat-friend .stat-value { color: #ed8936; } /* ОРАНЖЕВЫЙ для друга */
+.stat-together .stat-value { color: #22543d; } /* ТЕМНО-ЗЕЛЕНЫЙ для совместных */
+.stat-scheduled .stat-value { color: #9f7aea; } /* ФИОЛЕТОВЫЙ для запланированных */
+/* Календарь */
+.calendar-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Стилизация react-calendar */
+.react-calendar {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+.react-calendar__navigation button {
+  background: rgba(102, 126, 234, 0.1);
+  border: none !important; /* Убираем все границы */
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  min-width: 60px;
+  outline: none !important; /* Убираем outline */
+}
+
+.react-calendar__navigation button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.react-calendar__tile {
+  border: none !important; /* Убираем границы у дней */
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(102, 126, 234, 0.05);
+  outline: none !important; /* Убираем outline */
+}
+
+.react-calendar__tile:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.react-calendar__tile:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.05);
+}
+
+.react-calendar__tile--active {
+  background: rgba(102, 126, 234, 0.2) !important;
+  color: #2d3748;
+  font-weight: 600;
+  border: none !important; /* Убираем границу у активного дня */
+}
+
+.react-calendar__tile--now {
+  background: rgba(237, 137, 54, 0.1) !important;
+  color: #ed8936;
+  font-weight: 600;
+  border: none !important; /* Убираем границу у текущего дня */
+}
+
+/* Кастомные классы для тренировок */
+.both-completed {
+  background: linear-gradient(135deg, #22543d, #2d774d) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(34, 84, 61, 0.3);
+  border: none !important; /* Убираем границу */
+}
+
+.user-completed {
+  background: linear-gradient(135deg, #38a169, #48bb78) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(56, 161, 105, 0.3);
+  border: none !important; /* Убираем границу */
+}
+
+.other-completed {
+  background: linear-gradient(135deg, #ed8936, #f6ad55) !important;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(237, 137, 54, 0.3);
+  border: none !important; /* Убираем границу */
+}
+
+.scheduled-workout {
+  background: linear-gradient(135deg, rgba(159, 122, 234, 0.15), rgba(128, 90, 213, 0.2)) !important;
+  border: 2px solid #9f7aea !important; /* Оставляем только для запланированных */
+  color: #2d3748;
+  font-weight: 600;
+  position: relative;
+}
+
+.scheduled-workout::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  background: #9f7aea;
+  border-radius: 50%;
+}
+
+/* Выбранная дата */
+.selected-date-info {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.selected-date-header {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.workout-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.status-name {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.status-completed {
+  color: #38a169;
+}
+
+.status-not-completed {
+  color: #e53e3e;
+}
+
+.toggle-workout-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.toggle-workout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.toggle-workout-btn.cancel {
+  background: linear-gradient(135deg, #e53e3e, #c53030);
+}
+
+.motivation-message {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(237, 137, 54, 0.1);
+  border-radius: 8px;
+  margin-top: 1rem;
+  color: #ed8936;
+  font-weight: 500;
+}
+
+/* Легенда */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Запрещаем сжатие */
+}
+
+.legend-both { 
+  background: linear-gradient(135deg, #22543d, #2d774d);
+}
+.legend-you { 
+  background: linear-gradient(135deg, #38a169, #48bb78);
+}
+.legend-friend { 
+  background: linear-gradient(135deg, #ed8936, #f6ad55);
+}
+.legend-scheduled { 
+  background: white; 
+  border-color: #9f7aea;
+  position: relative;
+}
+
+.legend-scheduled::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 4px;
+  height: 4px;
+  background: #9f7aea;
+  border-radius: 50%;
+}
+
+/* Responsive - на мобильных делаем компактнее */
+@media (max-width: 768px) {
+  .legend {
+    gap: 0.75rem;
+  }
+  
+  .legend-item {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .legend-color {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legend {
+    gap: 0.5rem;
+  }
+  
+  .legend-item {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 1rem;
+  }
+  
+  .calendar-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .react-calendar__tile {
+    padding: 0.75rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .legend {
+    gap: 1rem;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .react-calendar__navigation button {
+    min-width: 40px;
+    font-size: 0.9rem;
+  }
+}

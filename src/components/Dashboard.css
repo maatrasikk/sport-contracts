@@ -1,0 +1,118 @@
+/* Dashboard.css */
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dashboard-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 0; /* Убедимся что нет лишних отступов */
+}
+
+.dashboard-title h2 {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding-left: 0; /* Убираем любой padding слева */
+}
+
+.contracts-count {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  margin-left: 0; /* Убираем отступы */
+}
+
+.create-contract-btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: white;
+  gap: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Если нужно еще левее - добавь отрицательный margin */
+.dashboard-title.align-left {
+  margin-left: -10px; /* Сдвигаем еще левее */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left; /* Выравнивание по левому краю на мобильных */
+  }
+  
+  .dashboard-title h2 {
+    font-size: 1.5rem;
+    text-align: left; /* Текст по левому краю */
+  }
+  
+  .contracts-count {
+    align-self: flex-start; /* Счетчик тоже по левому краю */
+  }
+}
